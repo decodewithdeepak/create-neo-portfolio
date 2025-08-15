@@ -1,17 +1,17 @@
 "use client"
 import { useEffect, useState } from "react";
-import Footer from "../components/sections/Footer";
-import { Header } from "../components/sections/Header";
-import { CommandOptions } from "../components/sections/CommandOptions";
-import { CTASection } from "../components/sections/CTASection";
-import { DemoVideo } from "../components/sections/DemoVideo";
-import { Dependencies } from "../components/sections/Dependencies";
-import { Features } from "../components/sections/Features";
-import Hero from "../components/sections/Hero";
-import { HowItWorks } from "../components/sections/HowItWorks";
-import { InstallationGuide } from "../components/sections/InstallationGuide";
-import LoadingScreen from "../components/ui/LoadingScreen";
-import { LenisProvider } from "../components/ui/LenisProvider";
+import Footer from "../components/sections/footer";
+import { Header } from "../components/sections/header";
+import { CommandOptions } from "../components/sections/command-options";
+import { CTASection } from "../components/sections/cta-section";
+import { DemoVideo } from "../components/sections/demo-video";
+import { Dependencies } from "../components/sections/dependencies";
+import { Features } from "../components/sections/features-section";
+import Hero from "../components/sections/hero-section";
+import { HowItWorks } from "../components/sections/how-it-works";
+import { InstallationGuide } from "../components/sections/installation-guide";
+import LoadingScreen from "../components/ui/loading-screen";
+import { LenisProvider } from "../components/ui/lenis-provider";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
