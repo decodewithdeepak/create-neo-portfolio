@@ -20,7 +20,7 @@ export function Hero() {
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center xs:inline-flex hover:text-blue-300 transition-colors"
                             >
-                                See Inspiration 
+                                See Inspiration
                                 <ArrowUpRight className="w-4 h-4 ml-1" />
                             </a>
                         </div>

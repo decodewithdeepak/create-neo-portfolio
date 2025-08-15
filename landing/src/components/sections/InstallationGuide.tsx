@@ -72,14 +72,14 @@ export function InstallationGuide() {
                         {step.icon}
                       </div>
                     </div>
-                    
+
                     {/* Desktop: Step number only */}
                     <div className="hidden sm:block flex-shrink-0">
                       <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center text-black font-bold text-lg sm:text-xl">
                         {step.step}
                       </div>
                     </div>
-                    
+
                     <div className="flex-1 min-w-0">
                       {/* Desktop: Icon and title side by side */}
                       <div className="hidden sm:flex sm:items-center space-x-3 mb-3 sm:mb-4">
@@ -90,12 +90,12 @@ export function InstallationGuide() {
                           {step.title}
                         </h3>
                       </div>
-                      
+
                       {/* Mobile: Title only (icon already shown above) */}
                       <h3 className="text-lg font-bold text-white leading-tight mb-3 sm:hidden">
                         {step.title}
                       </h3>
-                      
+
                       <p className="text-gray-300 mb-4 sm:mb-5 lg:mb-6 text-sm sm:text-base lg:text-lg leading-relaxed">
                         {step.description}
                       </p>

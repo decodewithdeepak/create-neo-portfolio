@@ -1,17 +1,17 @@
 "use client"
 import { useEffect, useState } from "react";
-import Footer from "./components/section/Footer";
-import { Header } from "./components/section/Header";
-import { CommandOptions } from "./components/section/CommandOptions";
-import { CTASection } from "./components/section/CTASection";
-import { DemoVideo } from "./components/section/DemoVideo";
-import { Dependencies } from "./components/section/Dependencies";
-import { Features } from "./components/section/Features";
-import Hero from "./components/section/Hero";
-import { HowItWorks } from "./components/section/HowItWorks";
-import { InstallationGuide } from "./components/section/InstallationGuide";
-import LoadingScreen from "./components/ui/LoadingScreen";
-import { LenisProvider } from "./components/ui/LenisProvider";
+import Footer from "../components/sections/Footer";
+import { Header } from "../components/sections/Header";
+import { CommandOptions } from "../components/sections/CommandOptions";
+import { CTASection } from "../components/sections/CTASection";
+import { DemoVideo } from "../components/sections/DemoVideo";
+import { Dependencies } from "../components/sections/Dependencies";
+import { Features } from "../components/sections/Features";
+import Hero from "../components/sections/Hero";
+import { HowItWorks } from "../components/sections/HowItWorks";
+import { InstallationGuide } from "../components/sections/InstallationGuide";
+import LoadingScreen from "../components/ui/LoadingScreen";
+import { LenisProvider } from "../components/ui/LenisProvider";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
