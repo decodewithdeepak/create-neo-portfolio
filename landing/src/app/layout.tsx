@@ -13,44 +13,43 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://next-theme-toggle.megh.me"),
-  title: "Next Theme Toggle – Add Dark/Light Mode to Next.js in Seconds",
+  metadataBase: new URL("https://create-neo-portfolio.vercel.app"),
+  title: "Neo Portfolio – Create Your Portfolio in 120 Seconds",
   description:
-    "Add a sleek dark/light theme toggle to your Next.js project instantly. One CLI command, zero setup, and full customization. Built for lazy perfectionists.",
+    "A CLI tool that instantly creates modern, responsive portfolios with Next.js, Tailwind CSS, and TypeScript. From zero to live in 120 seconds—minimal setup, maximum impact.",
   keywords:
-    "next.js theme toggle, dark mode, light mode, theme switch, next-themes, CLI tool, developer tools, tailwind theme, react theme, toggle component, UI themes, nextjs dark mode, nextjs CLI, boilerplate theme toggle",
+    "portfolio generator, CLI tool, Next.js portfolio, developer portfolio, Tailwind CSS, TypeScript, responsive portfolio, portfolio builder, portfolio template, modern portfolio, web developer portfolio, portfolio CLI, instant portfolio, portfolio maker",
   icons: {
     icon: "/favicon.ico",
   },
   openGraph: {
-    title: "Next Theme Toggle – Add Dark/Light Mode to Next.js in Seconds",
+    title: "Neo Portfolio – Create Your Portfolio in 120 Seconds",
     description:
-      "A powerful CLI tool to add beautiful dark/light mode support in your Next.js app in seconds. It just works.",
-    url: "https://next-theme-toggle.megh.me",
-    siteName: "Next Theme Toggle",
+      "From zero to live in 120 seconds. Generate a stunning, responsive portfolio with Next.js, Tailwind CSS, and TypeScript using one CLI command.",
+    url: "https://create-neo-portfolio.vercel.app",
+    siteName: "Neo Portfolio",
     type: "website",
     images: [
       {
         url: "/banner.png",
         width: 1200,
         height: 630,
-        alt: "Next Theme Toggle – Add Dark/Light Mode to Next.js",
+        alt: "Neo Portfolio – Create Your Portfolio in 120 Seconds",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Next Theme Toggle – Add Dark/Light Mode to Next.js in Seconds",
+    title: "Neo Portfolio – Create Your Portfolio in 120 Seconds",
     description:
-      "Drop in dark/light mode support to your Next.js project with a single command. Powered by next-themes, Tailwind, and pure laziness.",
+      "npx and done! Create a modern, responsive portfolio with Next.js, Tailwind CSS, and TypeScript. Minimal setup, maximum impact.",
     images: ["/banner.png"],
-    creator: "@meghtrix",
+    creator: "@deepakmodi_io",
   },
   alternates: {
-    canonical: "https://next-theme-toggle.megh.me",
+    canonical: "https://create-neo-portfolio.vercel.app",
   },
 };
-
 
 export default function RootLayout({
   children,
