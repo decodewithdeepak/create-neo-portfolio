@@ -5,13 +5,13 @@ import { useEffect, useState } from "react";
 import LenisProvider from "../components/ui/lenis-provider";
 import LoadingScreen from "../components/ui/loading-screen";
 
-import Header from "../components/sections/heaer";
+import Header from "../components/sections/header";
 import Hero from "../components/sections/hero-section";
 import DemoVideo from "../components/sections/demo-video";
 import Features from "../components/sections/features-section";
 import InstallationGuide from "../components/sections/installation-guide";
 import HowItWorks from "../components/sections/how-it-works";
-import Dependencies from "../components/sections/dependenies";
+import Dependencies from "../components/sections/dependencies";
 import CommandOptions from "../components/sections/command-options";
 import CTASection from "../components/sections/cta-section";
 import Footer from "../components/sections/footer";
