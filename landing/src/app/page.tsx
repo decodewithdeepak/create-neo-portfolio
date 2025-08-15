@@ -17,24 +17,6 @@ export default function Home() {
   const [mounted, setMounted] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 
-  // useEffect(() => {
-  //   setMounted(true)
-  //   // Check if user has visited before
-  //   const hasVisited = localStorage.getItem("next-theme-toggle-visited")
-
-  //   if (hasVisited) {
-  //     // Skip loading for returning users
-  //     setIsLoading(false)
-  //   } else {
-  //     // Show loading for first-time visitors
-  //     const timer = setTimeout(() => {
-  //       setIsLoading(false)
-  //       localStorage.setItem("next-theme-toggle-visited", "true")
-  //     }, 5000)
-
-  //     return () => clearTimeout(timer)
-  //   }
-  // }, [])
   useEffect(() => {
     document.body.classList.add('loading-background');
     setMounted(true);

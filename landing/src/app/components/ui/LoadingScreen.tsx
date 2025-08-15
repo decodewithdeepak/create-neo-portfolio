@@ -42,7 +42,7 @@ export default function TerminalLoadingInterface() {
                         <div className="flex items-center space-x-2">
                             <span className="text-green-400">❯</span>
                             <span>
-                                <span className="text-green-400">npx</span>
+                                <span className="text-purple-400">npx</span>
                                 <span className="text-gray-300"> </span>
                                 <span className="text-green-400">{typedText.replace(' ', '')}</span>
                                 <span className="animate-pulse text-white">|</span>
