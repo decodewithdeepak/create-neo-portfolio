@@ -5,7 +5,7 @@ import { useState } from "react"
 import { Copy, Check, } from "lucide-react"
 
 
-export function CTASection() {
+export default function CTASection() {
     const [copiedCommand, setCopiedCommand] = useState(false)
 
 

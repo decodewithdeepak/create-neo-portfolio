@@ -4,7 +4,7 @@ import CommandBlock from "../ui/command-block";
 import { FadeInWrapper } from "../ui/fade-in-wrapper";
 
 
-export function Hero() {
+export default function Hero() {
 
     return (
         <section className="relative z-30 py-8 sm:py-12 lg:py-14 px-4 sm:px-6 lg:px-2 text-center flex items-center -mb-20 sm:-mb-28 lg:-mb-35">
@@ -12,7 +12,7 @@ export function Hero() {
                 <FadeInWrapper delay={100}>
                     <div className="mb-6 sm:mb-8 flex justify-center">
                         <div className="inline-flex items-center gap-2 py-2 px-3 sm:px-4 text-xs sm:text-sm rounded-full shadow-lg backdrop-blur-md transition-all duration-300 border bg-black/40 border-white/20 text-white hover:bg-black/50 font-semibold cursor-pointer">
-                            <span className="font-medium">From Zero to Live in 120 Seconds</span>
+                            <span className="font-medium">Launch in 120 Seconds</span>
                             <Zap className="h-3 w-3 sm:h-4 sm:w-4 text-orange-500" />
                             <a
                                 href="https://decodewithdeepak.vercel.app"
@@ -20,7 +20,7 @@ export function Hero() {
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center xs:inline-flex hover:text-blue-300 transition-colors"
                             >
-                                See Inspiration
+                                See It Live
                                 <ArrowUpRight className="w-4 h-4 ml-1" />
                             </a>
                         </div>
@@ -109,6 +109,3 @@ export function Hero() {
         </section>
     );
 }
-
-
-export default Hero;

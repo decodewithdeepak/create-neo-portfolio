@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import { Copy, Check, Terminal, FileText, Folder, Code2 } from "lucide-react"
 
 
-export function InstallationGuide() {
+export default function InstallationGuide() {
   const [copiedStep, setCopiedStep] = useState<string | null>(null)
 
 

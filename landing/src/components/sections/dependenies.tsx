@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Package, Palette, Sun } from "lucide-react"
 
 
-export function Dependencies() {
+export default function Dependencies() {
   const dependencies = [
     {
       icon: <Sun className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />,

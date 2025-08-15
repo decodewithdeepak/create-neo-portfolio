@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Monitor } from "lucide-react";
 
-export function DemoVideo() {
+function DemoVideo() {
     return (
         <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-4">
             <div className="container mx-auto">
@@ -53,3 +53,5 @@ export function DemoVideo() {
         </section>
     );
 }
+
+export default DemoVideo;

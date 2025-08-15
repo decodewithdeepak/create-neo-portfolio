@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Terminal } from "lucide-react"
 
 
-export function CommandOptions() {
+export default function CommandOptions() {
   const commands = [
     {
       command: "npx create-neo-portfolio",
