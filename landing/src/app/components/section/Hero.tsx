@@ -1,6 +1,6 @@
 "use client"
 import { ArrowUpRight, Code2, Package, Sparkles, Zap } from "lucide-react";
-import CommandBlock from "./CommandBlock";
+import CommandBlock from "../ui/CommandBlock";
 import { FadeInWrapper } from "../ui/fade-in-wrapper";
 
 
