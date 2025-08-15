@@ -121,10 +121,11 @@
   }
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
-    background-color: var(--background);
+  background-color: var(--background);
 }
 html {
   scroll-behavior: auto !important;
@@ -144,5 +145,5 @@ body {
 
 .loading-background {
   background-color: black !important;
-    transition: background 0.5s;
+  transition: background 0.5s;
 }

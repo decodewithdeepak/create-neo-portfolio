@@ -11,15 +11,12 @@ function Header() {
     { id: "how-it-works", label: "How it Works" },
   ];
 
-  const getLenis = () =>
-    (window as typeof window & { lenis?: Lenis }).lenis;
+  const getLenis = () => (window as typeof window & { lenis?: Lenis }).lenis;
 
   const handleSmoothScroll = useCallback(
     (e: React.MouseEvent<HTMLElement>, href: string) => {
       e.preventDefault();
-      const target = document.querySelector(
-        `#${href}`
-      ) as HTMLElement | null;
+      const target = document.querySelector(`#${href}`) as HTMLElement | null;
       if (target) {
         const lenis = getLenis();
         if (lenis) {
@@ -41,7 +38,7 @@ function Header() {
         }
       }
     },
-    []
+    [],
   );
 
   const handleScrollToTop = useCallback(() => {

@@ -1,66 +1,70 @@
-"use client"
+"use client";
 
-
-import { useState } from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Copy, Check, Terminal, FileText, Folder, Code2 } from "lucide-react"
-
+import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Copy, Check, Terminal, FileText, Folder, Code2 } from "lucide-react";
 
 export default function InstallationGuide() {
-  const [copiedStep, setCopiedStep] = useState<string | null>(null)
-
+  const [copiedStep, setCopiedStep] = useState<string | null>(null);
 
   const copyToClipboard = async (text: string, step: string) => {
-    await navigator.clipboard.writeText(text)
-    setCopiedStep(step)
-    setTimeout(() => setCopiedStep(null), 2000)
-  }
-
+    await navigator.clipboard.writeText(text);
+    setCopiedStep(step);
+    setTimeout(() => setCopiedStep(null), 2000);
+  };
 
   const installationSteps = [
     {
       step: "1",
       title: "Create your portfolio",
       command: "npx create-neo-portfolio",
-      description: "This will scaffold your portfolio and install all dependencies automatically",
+      description:
+        "This will scaffold your portfolio and install all dependencies automatically",
       icon: <Terminal className="w-5 h-5 sm:w-6 sm:h-6" />,
     },
     {
       step: "2",
       title: "Navigate to your project",
       command: "cd neo-portfolio && npm run dev",
-      description: "Enter your project directory and start the development server",
+      description:
+        "Enter your project directory and start the development server",
       icon: <Folder className="w-5 h-5 sm:w-6 sm:h-6" />,
     },
     {
       step: "3",
       title: "Customize your content",
       command: "code src/components/constants/data.ts",
-      description: "Edit your portfolio data with your personal information and projects",
+      description:
+        "Edit your portfolio data with your personal information and projects",
       icon: <Code2 className="w-5 h-5 sm:w-6 sm:h-6" />,
     },
-  ]
-
+  ];
 
   return (
-    <section id="installation" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-4 border-t backdrop-blur-md border-white/5">
+    <section
+      id="installation"
+      className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-4 border-t backdrop-blur-md border-white/5"
+    >
       <div className="container mx-auto">
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 lg:mb-8 text-white px-4">
             Quick Installation Guide
           </h2>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-sm sm:max-w-2xl lg:max-w-4xl mx-auto leading-relaxed px-4">
-            Get your professional portfolio running in 3 simple steps - no configuration required
+            Get your professional portfolio running in 3 simple steps - no
+            configuration required
           </p>
         </div>
-
 
         <div className="max-w-sm sm:max-w-2xl lg:max-w-4xl mx-auto">
           <div className="space-y-4 sm:space-y-6 lg:space-y-8">
             {installationSteps.map((step, index) => (
-              <Card key={index} className="bg-black/20 backdrop-blur-xl border-white/5 shadow-xl">
+              <Card
+                key={index}
+                className="bg-black/20 backdrop-blur-xl border-white/5 shadow-xl"
+              >
                 <CardContent className="p-4 sm:p-5 lg:p-6">
                   <div className="flex flex-col sm:flex-row sm:items-start space-y-4 sm:space-y-0 sm:space-x-4 lg:space-x-6">
                     {/* Mobile: Step number and icon side by side */}
@@ -107,7 +111,9 @@ export default function InstallationGuide() {
                           </code>
                           <Button
                             size="sm"
-                            onClick={() => copyToClipboard(step.command, step.step)}
+                            onClick={() =>
+                              copyToClipboard(step.command, step.step)
+                            }
                             className="bg-clip-text text-gray-400 hover:text-white transition-all duration-200 focus:outline-none active:scale-95 group flex-shrink-0 p-2 sm:px-3"
                           >
                             {copiedStep === step.step ? (
@@ -125,7 +131,6 @@ export default function InstallationGuide() {
             ))}
           </div>
 
-
           <div className="text-center mt-8 sm:mt-12 lg:mt-16">
             <Badge className="bg-black/20 backdrop-blur-xl text-green-400 rounded-full border-gray-400/30 text-sm sm:text-base lg:text-lg px-4 sm:px-6 py-2 sm:py-3">
               <FileText className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
@@ -135,5 +140,5 @@ export default function InstallationGuide() {
         </div>
       </div>
     </section>
-  )
+  );
 }

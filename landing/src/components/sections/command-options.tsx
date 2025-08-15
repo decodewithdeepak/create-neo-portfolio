@@ -1,12 +1,12 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Terminal } from "lucide-react"
-
+import { Card, CardContent } from "@/components/ui/card";
+import { Terminal } from "lucide-react";
 
 export default function CommandOptions() {
   const commands = [
     {
       command: "npx create-neo-portfolio",
-      description: "Default installation with full Next.js and Tailwind CSS setup",
+      description:
+        "Default installation with full Next.js and Tailwind CSS setup",
       recommended: true,
     },
     {
@@ -19,33 +19,37 @@ export default function CommandOptions() {
       description: "Show all available options and usage information",
       recommended: false,
     },
-  ]
-
+  ];
 
   return (
     <section className="py-16 sm:py-24 lg:py-32 px-4 border-t backdrop-blur-md border-white/5">
       <div className="container mx-auto">
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 lg:mb-8 text-white">Command Options</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 lg:mb-8 text-white">
+            Command Options
+          </h2>
           <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-2">
             Flexible installation options for different portfolio setups
           </p>
         </div>
 
-
         <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6">
           {commands.map((cmd, index) => (
             <Card
               key={index}
-              className={`bg-black/20 backdrop-blur-xl border-white/5 shadow-xl transition-all duration-300 ${cmd.recommended ? "ring-1 ring-green-400/80" : ""
-                }`}
+              className={`bg-black/20 backdrop-blur-xl border-white/5 shadow-xl transition-all duration-300 ${
+                cmd.recommended ? "ring-1 ring-green-400/80" : ""
+              }`}
             >
               <CardContent className="p-4 sm:p-6 lg:p-8">
                 <div className="flex flex-col sm:flex-row sm:items-start space-y-4 sm:space-y-0 sm:space-x-4 lg:space-x-6">
                   <div className="flex-shrink-0 self-start sm:self-auto">
                     <div
-                      className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center ${cmd.recommended ? "bg-green-400/20 text-green-400" : "bg-gray-500/20 text-gray-400"
-                        }`}
+                      className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center ${
+                        cmd.recommended
+                          ? "bg-green-400/20 text-green-400"
+                          : "bg-gray-500/20 text-gray-400"
+                      }`}
                     >
                       <Terminal className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
@@ -64,7 +68,9 @@ export default function CommandOptions() {
                         {cmd.command}
                       </code>
                     </div>
-                    <p className="text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed">{cmd.description}</p>
+                    <p className="text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed">
+                      {cmd.description}
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -73,5 +79,5 @@ export default function CommandOptions() {
         </div>
       </div>
     </section>
-  )
+  );
 }

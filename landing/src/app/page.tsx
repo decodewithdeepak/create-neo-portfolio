@@ -16,7 +16,6 @@ import CommandOptions from "../components/sections/command-options";
 import CTASection from "../components/sections/cta-section";
 import Footer from "../components/sections/footer";
 
-
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 

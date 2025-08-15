@@ -1,6 +1,5 @@
 import { Github, GalleryHorizontalEnd } from "lucide-react";
 
-
 export default function Footer() {
   return (
     <footer className="py-12 px-4 bg-zinc-950/40 border-t backdrop-blur-md  border-white/5 font-medium">
@@ -11,7 +10,9 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <GalleryHorizontalEnd className="h-6 w-6 text-white" />
 
-              <span className="text-xl font-bold text-white">Neo Portfolio</span>
+              <span className="text-xl font-bold text-white">
+                Neo Portfolio
+              </span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Create Modern Portfolio in One Command
