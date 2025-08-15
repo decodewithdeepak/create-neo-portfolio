@@ -1,89 +1,88 @@
-import Image from "next/image";
+"use client"
+import { useEffect, useState } from "react";
+import Footer from "./components/layout/Footer";
+import { Header } from "./components/layout/Header";
+import { CommandOptions } from "./components/section/CommandOptions";
+import { CTASection } from "./components/section/CTASection";
+import { DemoVideo } from "./components/section/DemoVideo";
+import { Dependencies } from "./components/section/Dependencies";
+import { Features } from "./components/section/Features";
+import Hero from "./components/section/Hero";
+import { HowItWorks } from "./components/section/HowItWorks";
+import { InstallationGuide } from "./components/section/InstallationGuide";
+import LoadingScreen from "./components/ui/LoadingScreen";
+import { LenisProvider } from "./components/LenisProvider";
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
+
+  // useEffect(() => {
+  //   setMounted(true)
+  //   // Check if user has visited before
+  //   const hasVisited = localStorage.getItem("next-theme-toggle-visited")
+
+  //   if (hasVisited) {
+  //     // Skip loading for returning users
+  //     setIsLoading(false)
+  //   } else {
+  //     // Show loading for first-time visitors
+  //     const timer = setTimeout(() => {
+  //       setIsLoading(false)
+  //       localStorage.setItem("next-theme-toggle-visited", "true")
+  //     }, 5000)
+
+  //     return () => clearTimeout(timer)
+  //   }
+  // }, [])
+  useEffect(() => {
+    document.body.classList.add('loading-background');
+    setMounted(true);
+    setIsLoading(true);
+
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+      document.body.classList.remove('loading-background');
+    }, 3000);
+
+    return () => {
+      clearTimeout(timer);
+      document.body.classList.remove('loading-background');
+    };
+  }, []);
+
+  if (!mounted || isLoading) {
+    return <LoadingScreen />;
+  }
+
+
   return (
-    <main className="min-h-screen bg-gradient-to-br from-white to-blue-100 dark:from-gray-900 dark:to-blue-950 flex flex-col items-center justify-center px-4 py-8">
-      <div className="max-w-2xl w-full text-center">
-        <Image
-          src="/favicon.ico"
-          alt="Neo Portfolio CLI Logo"
-          width={64}
-          height={64}
-          className="mx-auto mb-4"
-        />
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-blue-700 dark:text-blue-300">
-          Neo Portfolio CLI & Template
-        </h1>
-        <p className="text-lg md:text-xl mb-6 text-gray-700 dark:text-gray-200">
-          Instantly create a modern, customizable developer portfolio with a
-          single CLI command.
-          <br />
-          Built with Next.js, TypeScript, and Tailwind CSS.
-        </p>
-        <div className="flex flex-col items-center gap-2 mb-8">
-          <code className="bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded text-lg font-mono text-blue-700 dark:text-blue-200">
-            npx create-neo-portfolio
-          </code>
-          <span className="text-sm text-gray-500">
-            No install required. Just run the command above!
-          </span>
-        </div>
-        <div className="flex flex-wrap justify-center gap-3 mb-8">
-          <a
-            href="https://www.npmjs.com/package/create-neo-portfolio"
-            target="_blank"
-            rel="noopener"
-            className="underline text-blue-600 dark:text-blue-300"
-          >
-            NPM
-          </a>
-          <a
-            href="https://github.com/decodewithdeepak/create-neo-portfolio"
-            target="_blank"
-            rel="noopener"
-            className="underline text-blue-600 dark:text-blue-300"
-          >
-            GitHub
-          </a>
-          <a
-            href="https://decodewithdeepak.vercel.app"
-            target="_blank"
-            rel="noopener"
-            className="underline text-blue-600 dark:text-blue-300"
-          >
-            Example Portfolio
-          </a>
-        </div>
-        <div className="mb-8">
-          <Image
-            src="/profile-gif.gif"
-            alt="Demo Screenshot"
-            width={600}
-            height={300}
-            className="rounded shadow mx-auto"
-          />
-        </div>
-        <h2 className="text-2xl font-semibold mb-2 text-blue-700 dark:text-blue-200">
-          Features
-        </h2>
-        <ul className="text-left text-gray-700 dark:text-gray-200 mb-8 list-disc list-inside mx-auto max-w-md">
-          <li>Minimal, modern design</li>
-          <li>Fully responsive</li>
-          <li>Easy to customize</li>
-          <li>Dark and light theme support</li>
-          <li>Dynamic OpenGraph/Twitter images</li>
-          <li>Blog, contact form, and more</li>
-        </ul>
-        <div className="text-center text-gray-500 text-sm">
-          Made with ❤️ by{" "}
-          <a
-            href="https://decodewithdeepak.vercel.app"
-            className="underline"
-          >
-            Deepak Modi
-          </a>
-        </div>
+    <>
+    <LenisProvider/>
+      <div className="min-h-screen w-full relative bg-gradient-to-br from-black via-black/90 to-gray-900/90 text-white">
+        {/* Pearl Mist Background with Top Glow */}
+        {/* <div
+          className="absolute inset-0 z-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 100% 120% at 50% 0%, rgba(226, 232, 240, 0.15), transparent 70%), #000000",
+          }}
+        /> */}
+        <Header />
+
+        <main>
+          <Hero />
+          <DemoVideo />
+          <Features />
+          <InstallationGuide />
+          <HowItWorks />
+          <Dependencies />
+          <CommandOptions />
+          <CTASection />
+        </main>
+        <Footer />
+
       </div>
-    </main>
+    </>
   );
 }
