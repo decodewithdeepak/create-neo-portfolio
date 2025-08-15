@@ -3,52 +3,91 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+const readline = require('readline');
 
-function copyRecursiveSync(src, dest) {
-    const exists = fs.existsSync(src);
-    const stats = exists && fs.statSync(src);
-    const isDirectory = exists && stats.isDirectory();
-    if (isDirectory) {
+// Minimal progress bar
+function progress(current, total, title) {
+    const percent = Math.round((current / total) * 100);
+    const filled = Math.round((current / total) * 20);
+    const bar = '█'.repeat(filled) + '░'.repeat(20 - filled);
+    process.stdout.write(`\r${title}: [${bar}] ${percent}%`);
+    if (current >= total) console.log();
+}
+
+// Copy with progress
+function copyDir(src, dest, callback) {
+    if (!fs.existsSync(src)) return;
+    const stats = fs.statSync(src);
+    
+    if (stats.isDirectory()) {
         if (!fs.existsSync(dest)) fs.mkdirSync(dest);
-        fs.readdirSync(src).forEach((childItemName) => {
-            copyRecursiveSync(path.join(src, childItemName),
-                path.join(dest, childItemName));
+        fs.readdirSync(src).forEach(item => {
+            copyDir(path.join(src, item), path.join(dest, item), callback);
         });
     } else {
         fs.copyFileSync(src, dest);
+        callback && callback();
     }
 }
 
-
-const readline = require('readline');
-const templateDir = path.join(__dirname, 'template');
-
-function askProjectName(defaultName, callback) {
-    const rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout
+// Count files
+function countFiles(dir) {
+    if (!fs.existsSync(dir)) return 0;
+    let count = 0;
+    fs.readdirSync(dir).forEach(item => {
+        const fullPath = path.join(dir, item);
+        count += fs.statSync(fullPath).isDirectory() ? countFiles(fullPath) : 1;
     });
-    rl.question(`Enter your portfolio project name [${defaultName}]: `, (answer) => {
-        rl.close();
-        callback(answer.trim() || defaultName);
-    });
+    return count;
 }
 
-function createPortfolio(targetDir) {
-    if (fs.existsSync(targetDir)) {
-        console.error(`A folder named '${targetDir}' already exists. Please choose a different project name.`);
+// Spinner
+function spin(msg) {
+    const frames = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'];
+    let i = 0;
+    const interval = setInterval(() => process.stdout.write(`\r${frames[i++ % frames.length]} ${msg}`), 80);
+    return () => { clearInterval(interval); process.stdout.write(`\r✓ ${msg}\n`); };
+}
+
+// Main function
+async function create(name) {
+    const templateDir = path.join(__dirname, 'template');
+    
+    if (fs.existsSync(name)) {
+        console.log(`❌ Directory '${name}' already exists!`);
         process.exit(1);
     }
-    console.log(`\nCreating your portfolio in '${targetDir}'...`);
-    copyRecursiveSync(templateDir, targetDir);
-    console.log('Installing dependencies for your portfolio...');
-    execSync('npm install', { cwd: targetDir, stdio: 'inherit' });
-    console.log('\nPortfolio setup complete!');
-    console.log(`\nNext steps:\n  cd ${targetDir}\n  npm run dev`);
+
+    console.log(`\n📁 Creating ${name}...\n`);
+
+    // Copy files
+    const total = countFiles(templateDir);
+    let current = 0;
+    copyDir(templateDir, name, () => progress(++current, total, '📄 Copying'));
+    
+    console.log('✓ Files copied!\n');
+
+    // Install dependencies
+    const stopSpin = spin('📦 Installing packages...');
+    try {
+        execSync('npm install --silent', { cwd: name, stdio: 'pipe' });
+        stopSpin();
+    } catch (error) {
+        stopSpin();
+        console.log('❌ Install failed:', error.message);
+        process.exit(1);
+    }
+
+    console.log(`\n🎉 Done!\n\nNext steps:\n  cd ${name}\n  npm run dev\n`);
 }
 
+// Entry point
 if (process.argv[2]) {
-    createPortfolio(process.argv[2]);
+    create(process.argv[2]);
 } else {
-    askProjectName('neo-portfolio', createPortfolio);
+    const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+    rl.question('Project name [neo-portfolio]: ', (answer) => {
+        rl.close();
+        create(answer.trim() || 'neo-portfolio');
+    });
 }
