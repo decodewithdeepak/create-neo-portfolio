@@ -1,16 +1,28 @@
 {
   "name": "create-neo-portfolio",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "CLI to scaffold a modern developer portfolio with Next.js and Tailwind CSS.",
   "main": "index.js",
   "bin": {
-    "create-neo-portfolio": "./index.js"
+    "create-neo-portfolio": "index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "portfolio",
+    "nextjs",
+    "cli",
+    "tailwind",
+    "template",
+    "developer",
+    "react"
+  ],
+  "author": "Deepak Modi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/decodewithdeepak/create-neo-portfolio.git"
+  },
   "type": "commonjs"
 }

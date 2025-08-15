@@ -16,8 +16,6 @@
   <a href="https://www.npmjs.com/package/create-neo-portfolio" target="_blank">
     <img src="https://img.shields.io/npm/dt/create-neo-portfolio?color=cb3837&logo=npm" alt="NPM downloads" />
   </a>
-  <img src="https://img.shields.io/github/license/decodewithdeepak/create-neo-portfolio" alt="License" />
-  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome" />
 </p>
 
 Create a modern, customizable developer portfolio in seconds—using a single CLI command! Built with Next.js, TypeScript, and Tailwind CSS. Perfect for showcasing your projects, skills, and experience with minimal setup.
@@ -111,4 +109,3 @@ npm run dev
 ## Need Help?
 
 Open an issue or reach out on GitHub!
-Enjoy building your portfolio! 🚀
