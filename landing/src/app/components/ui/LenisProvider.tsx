@@ -1,6 +1,6 @@
 "use client"
 
-import { useLenis } from "../hooks/useLenis"
+import { useLenis } from "../../hooks/useLenis"
 
 export function LenisProvider() {
   useLenis()

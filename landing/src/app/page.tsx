@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState } from "react";
-import Footer from "./components/layout/Footer";
-import { Header } from "./components/layout/Header";
+import Footer from "./components/section/Footer";
+import { Header } from "./components/section/Header";
 import { CommandOptions } from "./components/section/CommandOptions";
 import { CTASection } from "./components/section/CTASection";
 import { DemoVideo } from "./components/section/DemoVideo";
@@ -11,7 +11,7 @@ import Hero from "./components/section/Hero";
 import { HowItWorks } from "./components/section/HowItWorks";
 import { InstallationGuide } from "./components/section/InstallationGuide";
 import LoadingScreen from "./components/ui/LoadingScreen";
-import { LenisProvider } from "./components/LenisProvider";
+import { LenisProvider } from "./components/ui/LenisProvider";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -40,7 +40,7 @@ export default function Home() {
 
   return (
     <>
-    <LenisProvider/>
+      <LenisProvider />
       <div className="min-h-screen w-full relative bg-gradient-to-br from-black via-gray-900/90 to-black/90 text-white">
         {/* Pearl Mist Background with Top Glow */}
         {/* <div
