@@ -20,6 +20,12 @@
 
 Create a modern, customizable developer portfolio in seconds—using a single CLI command! Built with Next.js, TypeScript, and Tailwind CSS. Perfect for showcasing your projects, skills, and experience with minimal setup.
 
+<p align="center">
+  <img src="./public/banner.png" alt="Neo Portfolio CLI" width="700" /
+  </p>
+
+🌐 [View the Landing Page](https://create-neo-portfolio.vercel.app/)
+
 ---
 
 ## Reference & Inspiration
