@@ -59,7 +59,7 @@ export default function Home() {
   return (
     <>
     <LenisProvider/>
-      <div className="min-h-screen w-full relative bg-gradient-to-br from-black via-black/90 to-gray-900/90 text-white">
+      <div className="min-h-screen w-full relative bg-gradient-to-br from-black via-gray-900/90 to-black/90 text-white">
         {/* Pearl Mist Background with Top Glow */}
         {/* <div
           className="absolute inset-0 z-0"

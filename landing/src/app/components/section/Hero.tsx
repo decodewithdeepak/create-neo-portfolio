@@ -5,10 +5,6 @@ import { FadeInWrapper } from "../ui/fade-in-wrapper";
 
 
 export function Hero() {
-    // const scrollDown = () => {
-    //     window.scrollBy({ top: window.innerHeight, left: 0, behavior: 'smooth' });
-    // };
-
 
     return (
         <section className="relative z-30 py-8 sm:py-12 lg:py-14 px-4 sm:px-6 lg:px-2 text-center flex items-center -mb-20 sm:-mb-28 lg:-mb-35">
@@ -16,31 +12,24 @@ export function Hero() {
                 <FadeInWrapper delay={100}>
                     <div className="mb-6 sm:mb-8 flex justify-center">
                         <div className="inline-flex items-center gap-2 py-2 px-3 sm:px-4 text-xs sm:text-sm rounded-full shadow-lg backdrop-blur-md transition-all duration-300 border bg-black/40 border-white/20 text-white hover:bg-black/50 font-semibold cursor-pointer">
-                            <span className="font-medium">Zero Configuration Required</span>
+                            <span className="font-medium">From Zero to Live in 120 Seconds</span>
                             <Zap className="h-3 w-3 sm:h-4 sm:w-4 text-orange-500" />
-                            <span className="inline-flex items-center xs:inline-flex"> Setup? Zapped</span>
+                            <span className="inline-flex items-center xs:inline-flex">No Cap</span>
                         </div>
+
                     </div>
                 </FadeInWrapper>
-
-
-                {/* Tagline */}
-                {/* <p className="mb-6  text-lg text-gray-200">
-                    <span className="font-semibold text-white">
-                        No configs. Just toggle
-                    </span>
-                </p> */}
 
 
                 {/* Main Headline */}
                 <FadeInWrapper delay={200}>
                     <h1 className="mb-4 sm:mb-4 text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight sm:leading-snug text-center px-2">
                         <span className="block bg-gradient-to-r from-neutral-50 via-gray-300 to-gray-400 bg-clip-text text-transparent transition-all duration-300">
-                            Create Beautiful
+                            npx and Done
                         </span>
-                        <span className="  bg-gradient-to-r from-white via-green-400 to-gray-400
+                        <span className="  bg-gradient-to-r from-white via-slate-400 to-gray-400
     bg-clip-text text-transparent transition-all duration-300">
-                            Developer Portfolio
+                            Your Portfolio is Live !
                         </span>
                     </h1>
                 </FadeInWrapper>
@@ -49,7 +38,7 @@ export function Hero() {
                 {/* Subtitle */}
                 <FadeInWrapper delay={300}>
                     <p className="mb-4 sm:mb-4 text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 max-w-xs sm:max-w-lg md:max-w-2xl mx-auto leading-relaxed px-4">
-                        A CLI tool that instantly creates modern, responsive portfolio with Next.js, Tailwind CSS, and TypeScript - zero configuration hassle.
+                        A CLI tool that instantly creates modern, responsive portfolio with Next.js, Tailwind CSS, and TypeScript - minimal setup, maximum impact.
                     </p>
                 </FadeInWrapper>
 

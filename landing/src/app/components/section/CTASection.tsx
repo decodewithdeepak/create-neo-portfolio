@@ -21,10 +21,7 @@ export function CTASection() {
             <div className="container mx-auto text-center">
                 <div className="max-w-5xl mx-auto">
                     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 text-white leading-tight px-2">
-                        Create your{" "}
-                        <span className="bg-gradient-to-r from-gray-400 to-green-400 bg-clip-text text-transparent">portfolio</span>{" "}
-                        {/* bg-gradient-to-r from-gray-400 to-white/10 bg-clip-text text-transparent */}
-                        in seconds?
+                        Create your portfolio in seconds?
                     </h2>
                     <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-12 sm:mb-16 max-w-3xl mx-auto leading-relaxed px-2">
                         Join developers who&apos;ve built stunning portfolios with one command
