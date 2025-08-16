@@ -105,7 +105,7 @@ function Header() {
           </Button>
 
           <Button
-            className="bg-slate-950/100 hover:bg-slate-950/10 text-white border border-white/20 transition-all duration-200 backdrop-blur-sm text-sm px-3 py-2 sm:px-4"
+            className="hidden sm:flex bg-white/1 backdrop-blur-md border border-white/20 text-white hover:text-white hover:bg-white/10 transition-all duration-200"
             asChild
           >
             <a
