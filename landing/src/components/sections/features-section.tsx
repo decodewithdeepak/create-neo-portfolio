@@ -60,7 +60,7 @@ export default function Features() {
   return (
     <section
       id="features"
-      className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-4 bg-zinc-950/40 border-t backdrop-blur-md border-white/5"
+      className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-4 border-t backdrop-blur-md border-white/5"
     >
       <div className="container mx-auto">
         <div className="text-center mb-10 sm:mb-12 lg:mb-16">
