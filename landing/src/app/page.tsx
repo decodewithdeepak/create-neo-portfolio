@@ -17,13 +17,15 @@ import CTASection from "../components/sections/cta-section";
 import Footer from "../components/sections/footer";
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Add loading background effect
     document.body.classList.add("loading-background");
+    setMounted(true);
 
-    // Simulate loading (can be replaced with asset checks)
+    // Simulate loading
     const timer = setTimeout(() => {
       setIsLoading(false);
       document.body.classList.remove("loading-background");
@@ -35,12 +37,14 @@ export default function Home() {
     };
   }, []);
 
+  // Early return for better performance
+  if (!mounted || isLoading) {
+    return <LoadingScreen />;
+  }
+
   return (
     <>
       <LenisProvider />
-
-      {/* Loader Overlay */}
-      {isLoading && <LoadingScreen />}
 
       {/* Main Page */}
       <div className="min-h-screen w-full relative bg-gradient-to-br from-black via-gray-900/90 to-black/90 text-white">
@@ -57,6 +61,7 @@ export default function Home() {
         </main>
         <Footer />
       </div>
+      
     </>
   );
 }
