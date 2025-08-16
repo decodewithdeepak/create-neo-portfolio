@@ -32,8 +32,7 @@ export default function Hero() {
               npx and Done
             </span>
             <span
-              className="  bg-gradient-to-r from-white via-slate-400 to-gray-400
-    bg-clip-text text-transparent transition-all duration-300"
+              className="bg-gradient-to-r from-white via-slate-400 to-gray-400 bg-clip-text text-transparent transition-all duration-300"
             >
               Your Portfolio is Live !
             </span>
