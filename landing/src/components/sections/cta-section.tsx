@@ -13,7 +13,7 @@ export default function CTASection() {
   };
 
   return (
-    <section className="py-16 sm:py-24 lg:py-32 px-4 bg-zinc-950/40 border-t backdrop-blur-md border-white/5">
+    <section className="py-16 sm:py-24 lg:py-32 px-4  border-t backdrop-blur-md border-white/5">
       <div className="container mx-auto text-center">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 text-white leading-tight px-2">

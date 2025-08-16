@@ -5,7 +5,7 @@ export default function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="py-16 sm:py-24 lg:py-32 px-4 bg-zinc-950/40 border-t backdrop-blur-md border-white/5"
+      className="py-16 sm:py-24 lg:py-32 px-4 border-t backdrop-blur-md border-white/5"
     >
       <div className="container mx-auto">
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">
