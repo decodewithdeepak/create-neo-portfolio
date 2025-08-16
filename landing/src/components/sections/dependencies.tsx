@@ -70,7 +70,7 @@ export default function Dependencies() {
         <div className="text-center mt-12 lg:mt-16">
           <div className="inline-flex items-center bg-black/20 backdrop-blur-xl border border-white/5 rounded-full px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold">
             <Package className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-white" />
-            <span className="text-white">
+            <span className="text-white text-xs sm:text-base">
               All dependencies are automatically installed
             </span>
           </div>
