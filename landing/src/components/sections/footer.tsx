@@ -2,7 +2,7 @@ import { Github, GalleryHorizontalEnd } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="py-12 px-4 bg-zinc-950/40 border-t backdrop-blur-md border-white/5 font-medium">
+    <footer className="py-12 px-4 bg-gray-950/80 border-t backdrop-blur-md border-white/5 font-medium">
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand Section */}
