@@ -1,3 +1,6 @@
+// This file contains constants and data used across the portfolio template. 
+// Update the values to personalize your portfolio.
+
 export const ABOUT_ME = {
   name: "Your Name",
   title: "Software Developer",

@@ -60,22 +60,23 @@ const StatCard = ({
   </div>
 );
 
+
 export default function LeetCodeCard() {
-  
-    if (!USER_NAMES.leetcodeUsername || USER_NAMES.leetcodeUsername.trim() === "") {
-    return null;
-  }
 
   const [stats, setStats] = useState<LeetCodeStats | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-
+  
   useEffect(() => {
     fetchLeetCodeStats(USER_NAMES.leetcodeUsername)
       .then(setStats)
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
   }, []);
+
+  if (!USER_NAMES.leetcodeUsername || USER_NAMES.leetcodeUsername.trim() === "") {
+    return null;
+  }
 
   // Loading and error states
   if (loading) {

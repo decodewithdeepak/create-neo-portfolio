@@ -101,10 +101,11 @@ const useBlogs = () => {
 // =============================================
 
 const BlogSection = () => {
+  
+  const { blogs, loading } = useBlogs();
   if (!USER_NAMES.hashnodeUsername || USER_NAMES.hashnodeUsername.trim() === "") {
     return null;
   }
-  const { blogs, loading } = useBlogs();
 
   return (
     <section className="py-5" id="blog">
