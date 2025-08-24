@@ -23,7 +23,7 @@ function DemoVideo() {
             <CardContent className="p-0">
               <div className="relative aspect-video group overflow-hidden">
                 <iframe
-                  src="https://player.cloudinary.com/embed/?cloud_name=ddotbkkt7&public_id=Neo-Portfolio_-_Made_with_Clipchamp_wleb7g&profile=cld-default"
+                  src="https://player.cloudinary.com/embed/?cloud_name=ddotbkkt7&public_id=Neo-Portfolio_-_Made_with_Clipchamp_wleb7g&profile=cld-default&poster_options[transformation][start_offset]=0"                  
                   width="640"
                   height="360"
                   style={{ height: "auto", width: "100%", aspectRatio: "640 / 360" }}
