@@ -23,12 +23,15 @@ function DemoVideo() {
             <CardContent className="p-0">
               <div className="relative aspect-video group overflow-hidden">
                 <iframe
-                  src="https://www.youtube.com/embed/enjkcCdAlXc?rel=0&modestbranding=1&controls=1&showinfo=0"
-                  title="create-neo-portfolio-demo"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  src="https://player.cloudinary.com/embed/?cloud_name=ddotbkkt7&public_id=Neo-Portfolio_-_Made_with_Clipchamp_wleb7g&profile=cld-default"
+                  width="640"
+                  height="360"
+                  style={{ height: "auto", width: "100%", aspectRatio: "640 / 360" }}
+                  allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
                   allowFullScreen
-                  className="w-full h-full object-cover rounded-t-lg sm:rounded-t-xl"
+                  frameBorder="0"
+                  title="Neo Portfolio Demo Video"
+                  className="rounded-t-lg sm:rounded-t-xl"
                 />
               </div>
               <div className="p-4 sm:p-6 lg:p-8 bg-black/40 border-t border-white/5 rounded-b-lg sm:rounded-b-xl">
@@ -43,7 +46,7 @@ function DemoVideo() {
                   </div>
                   <Badge className="py-2 px-3 bg-white/10 text-gray-300 border-white/10 self-start sm:self-center">
                     <Monitor className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
-                    <span className="text-xs sm:text-sm">2:52 Duration</span>
+                    <span className="text-xs sm:text-sm">2:35 Duration</span>
                   </Badge>
                 </div>
               </div>
