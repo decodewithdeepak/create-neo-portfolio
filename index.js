@@ -22,7 +22,15 @@ function copyDir(src, dest, callback) {
     if (stats.isDirectory()) {
         if (!fs.existsSync(dest)) fs.mkdirSync(dest);
         fs.readdirSync(src).forEach(item => {
-            copyDir(path.join(src, item), path.join(dest, item), callback);
+            const srcPath = path.join(src, item);
+            let destPath = path.join(dest, item);
+            
+            // Handle gitignore.template -> .gitignore conversion
+            if (item === 'gitignore.template') {
+                destPath = path.join(dest, '.gitignore');
+            }
+            
+            copyDir(srcPath, destPath, callback);
         });
     } else {
         fs.copyFileSync(src, dest);
@@ -67,18 +75,39 @@ async function create(name) {
     
     console.log('✓ Files copied!\n');
 
-    // Install dependencies
-    const stopSpin = spin('📦 Installing packages...');
+    // Install dependencies with progress
+    console.log('📦 Installing packages...');
+    const packages = ['next', 'react', 'react-dom', 'tailwindcss', 'typescript', 'framer-motion', 'lucide-react', '@types/node', '@types/react', '@types/react-dom', 'autoprefixer', 'postcss', 'eslint', 'eslint-config-next'];
+    let installProgress = 0;
+    
+    const installInterval = setInterval(() => {
+        installProgress = Math.min(installProgress + Math.random() * 15, 95);
+        progress(installProgress, 100, '📦 Installing');
+    }, 300);
+    
     try {
         execSync('npm install --silent', { cwd: name, stdio: 'pipe' });
-        stopSpin();
+        clearInterval(installInterval);
+        progress(100, 100, '📦 Installing');
+        console.log('✓ Packages installed!\n');
     } catch (error) {
-        stopSpin();
-        console.log('❌ Install failed:', error.message);
+        clearInterval(installInterval);
+        console.log('\n❌ Install failed:', error.message);
         process.exit(1);
     }
 
-    console.log(`\n🎉 Done!\n\nNext steps:\n  cd ${name}\n  npm run dev\n`);
+    // Initialize git repository
+    console.log('🔧 Initializing git repository...');
+    try {
+        execSync('git init', { cwd: name, stdio: 'pipe' });
+        execSync('git add .', { cwd: name, stdio: 'pipe' });
+        execSync('git commit -m "Initial commit from neo-portfolio"', { cwd: name, stdio: 'pipe' });
+        console.log('✓ Git repository initialized!\n');
+    } catch (error) {
+        console.log('⚠️  Git initialization failed (this is optional):', error.message);
+    }
+
+    console.log(`🎉 Done!\n\nNext steps:\n  cd ${name}\n  npm run dev\n`);
 }
 
 // Entry point
